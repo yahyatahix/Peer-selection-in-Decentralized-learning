@@ -1,0 +1,14 @@
+#!/usr/bin/gnuplot
+
+set term png large nocrop enhanced size 1280,1024
+set output "all.png"
+set xrange [*:*]
+set yrange [*:*]
+set ylabel "Error"
+set xlabel "Cycles"
+set title "Results"
+
+plot \
+	"gossipLearning.controls.observers.PredictionObserver_gossipLearning.controls.observers.errorComputation.VotedErrorComputator[0]_gossipLearning.models.AdalinePerceptron.txt" u 1:2 w l t "res/results6/gossipLearning.controls.observers.PredictionObserver_gossipLearning.controls.observers.errorComputation.VotedErrorComputator[0]_gossipLearning.models.AdalinePerceptron.txt", \
+	"gossipLearning.controls.observers.PredictionObserver_gossipLearning.controls.observers.errorComputation.VotedErrorComputator[0]_gossipLearning.models.LogisticRegression.txt" u 1:2 w l t "res/results6/gossipLearning.controls.observers.PredictionObserver_gossipLearning.controls.observers.errorComputation.VotedErrorComputator[0]_gossipLearning.models.LogisticRegression.txt", \
+	"gossipLearning.controls.observers.PredictionObserver_gossipLearning.controls.observers.errorComputation.VotedErrorComputator[0]_gossipLearning.models.P2Pegasos.txt" u 1:2 w l t "res/results6/gossipLearning.controls.observers.PredictionObserver_gossipLearning.controls.observers.errorComputation.VotedErrorComputator[0]_gossipLearning.models.P2Pegasos.txt";
